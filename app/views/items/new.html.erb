@@ -1,0 +1,39 @@
+<div class="post_form" >
+  <%= form_with model:@item do |f| %>
+    <div class="Post_form__Content Text">
+      <%= f.label :"アイテム名" %>
+      <span class="Required">＊</span>
+      <br/>
+      <%= f.text_field :item_name, autofocus: true, class: "input" %>
+    </div>
+    <div class="Post_form__Content Text">
+      <%= f.label :"エリア" %>
+      <span class="Required">＊</span>
+      <br/>
+      <%= f.text_field :location, class: "input" %>
+    </div>
+    <div class="Post_form__Content Text">
+      <%= f.label :"価格帯" %>
+      <br/>
+      <%= f.text_field :price, class: "input" %>
+    </div>
+    <div class="input">
+      <%= f.label :"日持ち" %>
+      </br>
+      <%= f.text_field :best_before_date, class: "input" %>
+    </div>
+    <div class="Post_form__Content Text">
+      <%= f.label :"コメント" %>
+      </br>
+      <%= f.text_area :content, rows: "12", class: "textarea" %>
+    </div>
+    <div class="field">
+      <%= f.label :image, "画像", class:"label" %>
+      </br>
+      <%= f.attachment_field :image, class:"input" %>
+    </div>
+
+  
+    <%= f.submit "投稿する", class: "input" %>
+  <% end %>
+</div>  

@@ -1,0 +1,65 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// NEW
+.Post_new_title {
+  margin-top: 5px;
+  text-align: center;
+}
+.Post_form {
+  text-align: center;
+  width: 350px;
+  margin: 45px auto;
+  &__Content {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 0.8rem;
+    label {
+      font-weight: bold;
+      display: inline-block;
+      margin: 3px auto;
+    }
+    .Required {
+      color: pink;
+      font-weight: bold;
+      font-size: 0.8rem;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    .Non-required {
+      background-color: gray;
+    }
+    #Post_image_input, 
+    #Post_image_prev {
+      margin-bottom: 5px;
+    }
+    &__Field {
+      height: 45px;
+      width: 60%;
+      margin: 10px 100px;
+      padding: 10px auto0;
+      border: solid 1px gray;
+      border-radius: 3px;
+      background-color: white;
+      &--Large {
+        width: 60%;
+        margin:10px 100px;
+        padding: 5px auto 0;
+        border: solid 1px gray;
+        border-radius: 3px;
+        background-color: white;
+      }
+    }
+    select {
+      width: 100%;
+      height: 45px;
+      border: solid 1px gray;
+      border-radius: 3px;
+      background-color: white;
+    }
+  }
+  &__Btn {
+    text-align: center;
+    margin: 50px auto 100px;
+  }
+}

@@ -1,0 +1,64 @@
+<section class="hero">
+  <div class="hero-body has-background-danger-light">
+    <div class="container">
+      <h1 class="title has-text-danger ">
+        商品アイテム
+      </h1>
+    </div>
+  </div>
+</section>
+
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <div class="colum is-9">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <%= attachment_image_tag @item, :image %>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+            <p class="title is-4"><%= @item.item_name %></P>
+            </div>
+          </div>
+        </div>
+            <div class="colum">
+              <% if @item.user.id == current_user.id %>
+                <%= link_to "編集画面", edit_item_path(@item), class: "button is-success" %>
+              <% end %>
+            </div>
+
+      <div class="media-content">
+        <div class="content">
+            <tr>
+              <th>価格帯</th>
+            </tr>
+            <tr>
+              <td><%= @item.price %></td>
+            </tr>
+            <tr>
+              <th>エリア</th>
+            </tr>
+            <tr>
+              <td><%= @item.location %></td>
+            </tr>
+            <tr>
+              <th>日持ち</th>
+            </tr>
+            <tr>
+              <td><%= @item.best_before_date %></td>
+            </tr>
+        
+        <table class="table is-narrow">
+          <tr>
+            <th>コメント</th>
+          </tr>
+          <tr>
+              <td><%= simple_format  @item.content%></td>
+          </tr>
+          </table>
+          </div>
+      </div>
+</div>
