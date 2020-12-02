@@ -1,6 +1,12 @@
 ja:
   activerecord:
     attributes:
+      item:
+        item_name: アイテム名
+        location: エリア
+        price: 価格帯
+        content: コメント
+        image: 画像
       user:
         name: 名前
         password: パスワード

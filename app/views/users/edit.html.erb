@@ -1,3 +1,14 @@
+<% if @user.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= @user.errors.count %> つのエラーが発生したため登録に失敗しました</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <section class="section">
   <div class="container">
     <div class="columns is-centered">

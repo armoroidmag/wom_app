@@ -1,3 +1,14 @@
+<% if @item.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= @item.errors.count %> つのエラーが発生したため登録に失敗しました</h2>
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="post_form" >
   <%= form_with model:@item do |f| %>
     <div class="Post_form__Content Text">

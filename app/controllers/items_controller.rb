@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @items = Item.all
   end
@@ -14,12 +16,18 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    @item.save
-    redirect_to item_path(@item)
+    if @item.save
+      redirect_to item_path(@item), notice: '投稿できました'
+    else
+      render :new
+    end  
   end
 
   def edit
     @item = Item.find(params[:id])
+    if @item.user != current_user
+      redirect_to items_path, alert: '不正なアクセスです'
+    end
   end
 
   def update
